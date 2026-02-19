@@ -13,11 +13,8 @@ export const NotFound: React.FC = () => {
           al panel principal.
         </p>
         <div className="notfound-actions">
-          <Link to="/dashboard" className="notfound-btn-primary">
-            ⌂ Ir al Dashboard
-          </Link>
-          <Link to="/fichas" className="notfound-btn-secondary">
-            Ver Fichas
+          <Link to="/fichas" className="notfound-btn-primary">
+            ⌂ Ir a Fichas
           </Link>
         </div>
         <div className="notfound-meta">

@@ -13,7 +13,7 @@ export const Login = () => {
     const navigate = useNavigate();
 
     if (isAuthenticated) {
-        return <Navigate to="/dashboard" replace />;
+        return <Navigate to="/fichas" replace />;
     }
 
     async function handleSubmit(e: React.FormEvent) {

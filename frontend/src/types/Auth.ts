@@ -1,0 +1,32 @@
+// Tipos relacionados con autenticación
+
+export interface User {
+  id: number;
+  name: string;
+  email: string;
+  created_at: string;
+}
+
+export interface AuthSession {
+  user: User;
+  token: string;
+}
+
+export interface AuthResponse {
+  user: User;
+  token: string;
+  token_type: string;
+  expires_in: number;
+}
+
+export interface LoginCredentials {
+  email: string;
+  password: string;
+}
+
+export interface RegisterData {
+  name: string;
+  email: string;
+  password: string;
+  password_confirmation: string;
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { FormularioFicha } from '../components/FormularioFicha';
+import { Spinner } from '../components/Spinner';
 import { fichasService } from '../services/fichasService';
 import type { FichaDespiece, FichaDespiececreateDTO } from '../types/ficha';
 
@@ -68,7 +69,7 @@ export const EditarFichaPage: React.FC = () => {
           </div>
           <div className="panel-body">
             {loading ? (
-              <p style={{ padding: '24px', textAlign: 'center', color: '#666' }}>Cargando ficha...</p>
+              <Spinner message="Cargando ficha..." size="lg" />
             ) : ficha ? (
               <FormularioFicha
                 ficha={ficha}

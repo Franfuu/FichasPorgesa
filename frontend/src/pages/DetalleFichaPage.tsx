@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { DetalleFicha } from '../components/DetalleFicha';
+import { Spinner } from '../components/Spinner';
 import { fichasService } from '../services/fichasService';
 import type { FichaDespiece } from '../types/ficha';
 
@@ -50,13 +51,15 @@ export const DetalleFichaPage: React.FC = () => {
 
   const handleDownloadPDF = async () => {
     try {
-      const blob = await fichasService.downloadPDF(ficha!.archivo_pdf_url!);
+      const blob = await fichasService.downloadPDF(Number(id));
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
       link.download = `ficha-${id}.pdf`;
+      document.body.appendChild(link);
       link.click();
-      window.URL.revokeObjectURL(url);
+      document.body.removeChild(link);
+      setTimeout(() => window.URL.revokeObjectURL(url), 100);
       setNotification({ type: 'success', message: 'PDF descargado exitosamente' });
     } catch {
       setNotification({ type: 'error', message: 'Error al descargar el PDF' });
@@ -74,7 +77,7 @@ export const DetalleFichaPage: React.FC = () => {
         )}
 
         {loading ? (
-          <p>Cargando ficha...</p>
+          <Spinner message="Cargando ficha..." size="lg" />
         ) : ficha ? (
           <DetalleFicha
             ficha={ficha}

@@ -1,6 +1,7 @@
 import React from 'react';
 import type { FichaDespiece } from '../types/ficha';
 import { Button } from './Button';
+import { Spinner } from './Spinner';
 
 interface ListaFichasProps {
   fichas: FichaDespiece[];
@@ -37,7 +38,9 @@ export const ListaFichas: React.FC<ListaFichasProps> = ({
       <tbody>
         {loading && (
           <tr className="loading-row">
-            <td colSpan={9}>Cargando fichas...</td>
+            <td colSpan={9}>
+              <Spinner message="Cargando fichas..." size="md" />
+            </td>
           </tr>
         )}
         {!loading && fichas.length === 0 && (

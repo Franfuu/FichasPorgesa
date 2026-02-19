@@ -13,7 +13,7 @@ export const authStorage = {
         }
     },
     set(session: AuthSession) : void {
-        localStorage.setItem(CLAVE, JSON.stringify(session))
+        localStorage.setItem(CLAVE, JSON.stringify(session)) // ← persiste para siempre la sesion
     },
     clear() {
         localStorage.removeItem(CLAVE);

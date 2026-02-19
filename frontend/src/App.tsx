@@ -6,7 +6,6 @@ import { PrivateRoute } from './routing/PrivateRoute';
 import { Home } from './pages/Home';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
-import { DashboardPage } from './pages/DashboardPage';
 import { FichasPage } from './pages/FichasPage';
 import { DetalleFichaPage } from './pages/DetalleFichaPage';
 import { EditarFichaPage } from './pages/EditarFichaPage';
@@ -23,14 +22,6 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           {/* Rutas Privadas */}
-          <Route
-            path="/dashboard"
-            element={
-              <PrivateRoute>
-                <DashboardPage />
-              </PrivateRoute>
-            }
-          />
           <Route
             path="/fichas"
             element={

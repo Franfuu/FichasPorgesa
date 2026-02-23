@@ -4,9 +4,7 @@ API hecha en Laravel para gestionar fichas de despiece de piezas metálicas. Es 
 
 ---
 
-## Descripción del proyecto
-
-La idea es que una empresa que trabaja con piezas metálicas (aluminio y acero) pueda guardar las fichas de despiece de cada pieza: nombre, material, medidas, cantidad y cliente al que pertenece. También se puede subir un PDF con la ficha técnica.
+## Descripción del proyectoLa idea es que una empresa que trabaja con piezas metálicas (aluminio y acero) pueda guardar las fichas de despiece de cada pieza: nombre, material, medidas, cantidad y cliente al que pertenece. También se puede subir un PDF con la ficha técnica.
 
 El backend es una API REST con Laravel 11 que devuelve JSON y consume el frontend en React+TypeScript.
 

@@ -10,8 +10,8 @@ export const Header: React.FC = () => {
       <Link to="/fichas" className="brand">
         <span className="brand-icon">⚙</span>
         <div>
-          <span className="brand-title">SistemaDespiece</span>
-          <span className="brand-sub">Industrial Management System</span>
+          <span className="brand-title">Sistema Despiece</span>
+          <span className="brand-sub">Porgesa S.L.</span>
         </div>
       </Link>
 

@@ -28,7 +28,7 @@ class FichaDespieceController extends Controller
     }
 
     // Protegido
-    public function store(StoreFichaDespieceRequest $request): FichaDespieceResource
+    public function store(StoreFichaDespieceRequest $request): \Illuminate\Http\JsonResponse
     {
         $data = $request->validated();
 
@@ -39,7 +39,9 @@ class FichaDespieceController extends Controller
 
         $ficha = FichaDespiece::create($data);
 
-        return new FichaDespieceResource($ficha);
+        return (new FichaDespieceResource($ficha))
+            ->response()
+            ->setStatusCode(201);
     }
 
     // Protegido
